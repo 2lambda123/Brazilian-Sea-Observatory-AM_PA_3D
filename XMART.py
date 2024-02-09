@@ -126,7 +126,7 @@ def telegram_msg(message):
         if telegram_messages == 1:
                 #message = "hello from your telegram bot"
                 urlbot = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={message}"
-                print(requests.get(urlbot).json()) # this sends the message
+                print(requests.get(urlbot, timeout=60).json(timeout=60)) # this sends the message
 #####################################################
 
 if forecast_mode == 1:

@@ -8,6 +8,8 @@ from Input_XMART import *
 
 #####################################################
 def next_date (run):
+    """"""
+    
     global next_start_date
     global next_end_date
         
@@ -16,6 +18,8 @@ def next_date (run):
 
 #####################################################
 def write_date(file_name):
+        """"""
+        
         
     with open(file_name) as file:
         file_lines = file.readlines()
@@ -36,6 +40,8 @@ def write_date(file_name):
 
 #####################################################
 def copy_initial_files(level):
+    """"""
+    
 
     initial_files_dir = (backup_dir[level]+"//"+str(old_start_date.strftime("%Y%m%d")) + "_" + str(old_end_date.strftime("%Y%m%d")))
     
@@ -58,6 +64,8 @@ def copy_initial_files(level):
                 os.rename(file, file.replace("_2.fin","_1.fin"))
 #####################################################
 def backup(level):
+    """"""
+    
     
     backup_dir_date = (backup_dir[level]+"//"+str(next_start_date.strftime("%Y%m%d")) + "_" + str(next_end_date.strftime("%Y%m%d")))
         
@@ -92,6 +100,8 @@ def backup(level):
 
 #####################################################
 def convert(date, hdf_file):
+        """"""
+        
         
     convert2netcdf_file = convert2netcdf_dir + "//Convert2netcdf.dat"
     
@@ -123,6 +133,8 @@ def convert(date, hdf_file):
 #####################################################
 #Funcao para envio de mensagem pelo Bot do Telegram
 def telegram_msg(message):
+        """"""
+        
         if telegram_messages == 1:
                 #message = "hello from your telegram bot"
                 urlbot = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={message}"
